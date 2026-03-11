@@ -39,7 +39,7 @@ jobs:
   deploy-github-pages:
     needs: build
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/N23-17-patch-2'
     
     permissions:
       contents: read
@@ -72,7 +72,7 @@ jobs:
   deploy-netlify:
     needs: build
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/N23-17-patch-2' || github.ref == 'refs/heads/N23-17-patch-2/develop')
 
     steps:
       - name: Download artifact
